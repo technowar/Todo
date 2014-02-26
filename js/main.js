@@ -9,7 +9,11 @@
 
             var self = this;
 
-            document.getElementById( 'todo-lists' ).innerHTML += '<li>' + self.todo.value + '</li>';
+            if ( document.getElementById( 'todo' ).value !== '' ) {
+                document.getElementById( 'todo-lists' ).innerHTML += '<li>' + '<input type=checkbox>' + self.todo.value + '</li>';
+            }
+
+            document.getElementById( 'todo' ).value = '';
         };
     }
 
