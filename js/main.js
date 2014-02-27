@@ -2,31 +2,33 @@
     'use strict';
 
     function init () {
-        var todo = document.getElementById( 'form' );
+        var todo  = document.getElementById( 'form' );
+        var lists = document.getElementById( 'todo-lists' );
         
-        todo.addEventListener( 'submit', function ( e ) {
+        todo.addEventListener( 'submit', todoSubmit );
+
+        function todoSubmit ( e ) {
             e.preventDefault();
 
-            var self = this;
+            var todo     = document.getElementById( 'todo' );
+            var liTodo   = document.createElement( 'li' );
 
-            if ( document.getElementById( 'todo' ).value !== '' ) {
-                document.getElementById( 'todo-lists' ).innerHTML += '<li>' + '<input type=checkbox>' + self.todo.value + '</li>';
+            liTodo.innerHTML = '<input class="select" type="checkbox"><label>' + todo.value;
+            lists.appendChild( liTodo ); 
 
-                var lists = document.getElementById( 'todo-lists' ).querySelectorAll( 'input' );
+            var liChecker = liTodo.querySelector( '.select' );
+            liChecker.addEventListener( 'click', todoChecker.bind( liChecker ) );
 
-                for ( var i = 0; i < lists.length; i ++ ) {
-                    lists[ i ].addEventListener( 'click', function( evt ) {
-                        if( this.checked ) {
-                            this.classList.add( 'checked' );
-                        } else {
-                            this.classList.remove( 'checked' );
-                        }
-                    } );
-                }
+            todo.value = '';
+        }
+
+        function todoChecker ( e ) {
+            if ( this.checked ) {
+                this.nextSibling.classList.add( 'checked' );
+            } else {
+                this.nextSibling.classList.remove( 'checked' );
             }
-
-            document.getElementById( 'todo' ).value = '';
-        } );
+        }
     }
 
     window.onload = function () {
