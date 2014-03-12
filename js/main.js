@@ -4,7 +4,7 @@
     function init () {
         var todo  = document.getElementById( 'form' );
         var lists = document.getElementById( 'todo-lists' );
-        
+
         todo.addEventListener( 'submit', todoSubmit );
 
         function todoSubmit ( e ) {
@@ -14,7 +14,7 @@
             var liTodo   = document.createElement( 'li' );
 
             liTodo.innerHTML = '<input class="select" type="checkbox"><label>' + todo.value;
-            lists.appendChild( liTodo ); 
+            lists.appendChild( liTodo );
 
             var liChecker = liTodo.querySelector( '.select' );
             liChecker.addEventListener( 'click', todoChecker.bind( liChecker ) );
@@ -31,10 +31,10 @@
         }
     }
 
-    window.onload = function () {
+    window.addEventListener( 'load', function () {
         if ( document.readyState === 'complete' ) {
             init();
         }
-    }
+    } );
 
 } )();
