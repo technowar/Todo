@@ -1,30 +1,30 @@
 #app {
-    font-family      : "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    margin-left      : auto;
-    margin-right     : auto;
-    width            : 40%;
-    background-color : #b0e0e6;
+	font-family      : "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	margin-left      : auto;
+	margin-right     : auto;
+	width            : 40%;
+	background-color : #b0e0e6;
 }
 
 #form {
-    padding : 30px 20px 10px;
+	padding : 30px 20px 10px;
 }
 
 #todo {
-    width  : 490px;
-    height : 30px;
+	width  : 490px;
+	height : 30px;
 }
 
 #todo-lists {
-    list-style : none;
-    padding    : 10px 20px 20px;
+	list-style : none;
+	padding    : 10px 20px 20px;
 }
 
 .checked {
-    color           : red;
-    text-decoration : line-through;
+	color           : red;
+	text-decoration : line-through;
 }
 
 li {
-    padding : 5px 0px 10px;
+	padding : 5px 0px 10px;
 }
